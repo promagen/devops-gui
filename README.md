@@ -16,7 +16,7 @@ Libraries
 
 https://www.npmjs.com/package/shelljs
 
-    npm install -g shelljs
+    npm install shelljs
     npm install opn
     npm install fs-path
     npm install ini
