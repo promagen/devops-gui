@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/bat', batRouter);
-app.use('/project', projectRouter);
+app.use('/project/', projectRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

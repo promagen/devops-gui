@@ -15,6 +15,15 @@ a {
     color: #007bac;
 }
 
+#navig_private {
+    float: right;
+}
+
+.projects li a {
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
 li a {
     font-size: 20px;
     padding-bottom: 10px;

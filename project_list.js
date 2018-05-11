@@ -1,7 +1,8 @@
 const express = require('express');
 
 var basePath = '/xampp/htdocs/';
-var projectList = [];
+var projectListPublic = [];
+var projectListPrivate = [];
 
 const fs = require('fs');
 const ini = require('ini');
@@ -27,6 +28,26 @@ var getFileList = function (path, callback) {
     // return FileList;
 };
 
+
+
+// Create menu from devops
+let devops_path = '~\\WebstormProjects\\devops\\windows\\10';
+devops_path = devops_path.replace(/^~/, osHomedir());
+console.log(devops_path);
+
+fs.readdirSync(devops_path).forEach(file => {
+    console.log(file);
+    projectListPublic.push({
+        'url': 'project/public/' + projectListPublic.length,
+        'title': file,
+        'path': devops_path + '\\' + file,
+        'domain': 'localhost',
+        'files': []
+    });
+});
+console.log(projectListPublic);
+
+
 let project_path = '~/devops-gui-projects';
 // console.log(osHomedir());
 project_path = project_path.replace(/^~/, osHomedir());
@@ -37,39 +58,22 @@ getFileList(project_path, function (FileList) {
     FileList.forEach(function (filename, index) {
         // console.log(project_path);
 
-        var filep = filename;
-        // console.log(filep);
+        var config = ini.parse(fs.readFileSync(filename, 'utf-8'));
 
-        var config = ini.parse(fs.readFileSync(filep, 'utf-8'));
-
-        projectList.push({
-            'url': 'project/' + projectList.length,
+        console.log(index);
+        projectListPrivate.push({
+            'url': 'project/private/' + projectListPrivate.length,
             'title': config.title,
             'path': config.path,
             'domain': config.domain,
             'files': []
         });
-        console.log(projectList);
-
     });
 });
-
-// Create menu from devops
-let devops_path = '~\\WebstormProjects\\devops\\windows\\10';
-devops_path = devops_path.replace(/^~/, osHomedir());
-console.log(devops_path);
-
-fs.readdirSync(devops_path).forEach(file => {
-    console.log(file);
-    projectList.push({
-        'url': 'project/' + projectList.length,
-        'title': file,
-        'path': devops_path + '\\' + file,
-        'domain': 'localhost',
-        'files': []
-    });
-});
-
-console.log(projectList);
+console.log(projectListPrivate);
+var projectList = {
+    'private': projectListPrivate,
+    'public': projectListPublic,
+};
 
 module.exports = projectList;

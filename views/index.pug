@@ -6,13 +6,20 @@ block content
     h1= title
     //button(class="navbar-toggler navbar-toggler-right", type="button", data-toggle="collapse", data-target="#navbarText", aria-controls="navbarText", aria-expanded="false", aria-label="Toggle navigation")
     //span(class="navbar-toggler-icon")
-    div(class="collapse navbar-collapse", id="navig")
+    div(class="collapse navbar-collapse", id="navig_public")
       ul(class="projects navbar-nav mr-auto")
         each p in projects
           li(class="link nav-item")
             a(class="nav-link button", href=p.url)= p.title
         else
           li Projects are not existing!
+
+  nav(class="navbar navbar-toggleable-md navbar-light bg-faded")
+    div(class="collapse navbar-collapse", id="navig_private")
+      ul(class="projects navbar-nav mr-auto")
+        each p in projects_private
+          li(class="link nav-item")
+            a(class="nav-link button", href=p.url)= p.title
 
   div(class='scripts')
   div(class='logs')

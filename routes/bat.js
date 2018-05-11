@@ -3,13 +3,15 @@ var router = express.Router();
 var projectList = require('../project_list');
 var getFileList = require('../get_file_list');
 
-router.get('/p/:project_id/:file_id', function (req, res, next) {
+router.get('/p/:project_type/:project_id/:file_id', function (req, res, next) {
 
+    var projectType = req.params.project_type;
     var projectId = req.params.project_id;
     var fileId = req.params.file_id;
-    var project_path = projectList[projectId]['path'];
+    var project_path = projectList[projectType][projectId]['path'];
 
-    // console.log(req);
+    console.log(project_path);
+
     getFileList(project_path, function (FileList) {
         // console.log(FileList);
         FileList.forEach(function (filename, index) {

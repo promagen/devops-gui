@@ -3,16 +3,33 @@ var router = express.Router();
 var projectList = require('../project_list');
 var getFileList = require('../get_file_list');
 
+console.log('project');
+
+
 /* GET home page. */
-router.get('/:project_id', function (req, res, next) {
+router.get('/:project_type/:project_id', function (req, res, next) {
 
     // console.log(projectList['0']);
     var projectId = req.params.project_id;
-    var project_path = projectList[projectId]['path'];
+    var projectType = req.params.project_type;
+    console.log('projectType');
+    console.log(projectType);
 
+    console.log('projectId');
+    console.log(projectId);
+
+    console.log(projectList[projectType]);
+
+    var project_path = projectList[projectType][projectId]['path'];
+
+    console.log('project_path');
+    console.log(project_path);
+
+    console.log('getFileList');
     getFileList(project_path, function (FileList) {
         // console.log(FileList);
         var fList = [];
+        console.log('fList');
 
         FileList.forEach(function (filename, fileId) {
 
@@ -24,8 +41,8 @@ router.get('/:project_id', function (req, res, next) {
                 'path': filename,
                 'path_dir': path.dirname(filename) + '\\',
                 'name': filename.replace(/^.*[\\\/]/, ''),
-                'url': 'bat/p/' + projectId + '/' + fileId,
-                'domain': projectList[projectId]['domain']
+                'url': 'bat/p/' + projectType + '/' + projectId + '/' + fileId,
+                'domain': projectList[projectType][projectId]['domain']
             });
         });
 
