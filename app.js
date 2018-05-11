@@ -4,10 +4,22 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var FileList = [];
+//var projectList = [];
+var projectList = require('./project_list');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var batRouter = require('./routes/bat');
+var projectRouter = require('./routes/project');
+
 
 var app = express();
+
+// TODO: load athentication data for API,
+// TODO: people accounts skype, email, etc
+// TODO: Load environment.js and load Path, and specific
+// TODO: load project.js file and load to the projectLIst
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/bat', batRouter);
+app.use('/project', projectRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  nav(class="navbar navbar-toggleable-md navbar-light bg-faded")
+    h1= title
+    //button(class="navbar-toggler navbar-toggler-right", type="button", data-toggle="collapse", data-target="#navbarText", aria-controls="navbarText", aria-expanded="false", aria-label="Toggle navigation")
+    //span(class="navbar-toggler-icon")
+    div(class="collapse navbar-collapse", id="navig")
+      ul(class="projects navbar-nav mr-auto")
+        each p in projects
+          li(class="link nav-item")
+            a(class="nav-link button", href=p.url)= p.title
+        else
+          li Projects are not existing!
+
+  div(class='scripts')
+  div(class='logs')
+    ul
+  pre(class='message')
+  div(id='containerworldTime')
+    iframe(src='http://localhost/', width="992", height="500", scrolling="yes")

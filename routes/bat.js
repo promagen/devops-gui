@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var projectList = require('../project_list');
+var getFileList = require('../get_file_list');
 
-router.get('/bat/p/:projectId/:fileId', function (req, res) {
+router.get('/p/:project_id/:file_id', function (req, res, next) {
 
-    var projectId = req.param('projectId');
-    var fileId = req.param('fileId');
+    var projectId = req.params.project_id;
+    var fileId = req.params.file_id;
     var project_path = projectList[projectId]['path'];
 
     // console.log(req);
