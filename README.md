@@ -14,6 +14,9 @@ possible to restart docker with defaults from command line?
 
 Libraries
 
+https://www.npmjs.com/package/shelljs
+
+    npm install -g shelljs
     npm install opn
     npm install fs-path
     npm install ini

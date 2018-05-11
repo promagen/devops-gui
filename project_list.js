@@ -6,7 +6,7 @@ var projectList = [];
 const fs = require('fs');
 const ini = require('ini');
 const osHomedir = require('os-homedir');
-
+// https://nodejs.org/api/os.html
 // console.log(config);
 
 var getFileList = function (path, callback) {
