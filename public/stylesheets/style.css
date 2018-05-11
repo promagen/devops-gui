@@ -1,8 +1,88 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 5px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: #dddddd;
+}
+
+ul.commmands li {
+    /*border: 1px;*/
+    /*padding: 2px;*/
+
+    margin-left: 22px;
 }
 
 a {
-  color: #00B7FF;
+    color: #007bac;
+}
+
+li a {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0px;
+    padding: 2px 2px 1px 3px;
+    /*width: 200px;*/
+    color: white;
+    background: #cccccc;
+}
+
+body > .container {
+    /*padding-top: 60px;*/
+}
+
+footer {
+    width: 100%;
+    background: #787878;
+}
+
+.scripts {
+    width: 160px;
+    float: left;
+    background-color: #dddddd;
+    font-size: 16px;
+}
+
+.message {
+    min-width: 1000px;
+    float: right;
+    background-color: #fafafa;
+    font-size: 10px;
+    padding-left: 5px;
+}
+
+h2 {
+    font-size: 14px;
+}
+
+.logs {
+    width: 250px;
+    float: left;
+
+}
+
+#containerworldTime {
+    height: 395px;
+    margin: auto;
+    overflow: hidden;
+    width: 520px;
+    border: green solid 1px;
+    top: 0px;
+    right: 0px;
+    float: right;
+}
+
+#containerworldTime iframe {
+    border: 0 solid;
+    height: 1200px;
+    margin-left: -440px;
+    margin-top: -360px;
+    width: 1400px;
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -o-transform: scale(0.4);
+    -ms-transform: scale(0.4);
 }
