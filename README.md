@@ -10,6 +10,8 @@ https://github.com/apicra/devops
 
 ### DevOpsTerminal
 In the future, will be used another solution with apicra-devops:
+
+### WebBrowser client for terminal console 
 https://github.com/DevOpsTerminal/frontend
 
 ## How it works
