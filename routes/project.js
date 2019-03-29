@@ -20,7 +20,8 @@ router.get('/:project_type/:project_id', function (req, res, next) {
 
     console.log(projectList[projectType]);
 
-    var project_path = projectList[projectType][projectId]['path'];
+    var partition = 'e:';
+    var project_path = partition + projectList[projectType][projectId]['path'];
 
     console.log('project_path');
     console.log(project_path);
