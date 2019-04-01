@@ -34,7 +34,8 @@ var getFileList = function (path, callback) {
 let devops_path = '~\\WebstormProjects\\devops\\windows\\10';
 devops_path = devops_path.replace(/^~/, osHomedir());
 console.log(devops_path);
-
+projectListPublic = {};
+/*
 fs.readdirSync(devops_path).forEach(file => {
     console.log(file);
     projectListPublic.push({
@@ -45,6 +46,7 @@ fs.readdirSync(devops_path).forEach(file => {
         'files': []
     });
 });
+ */
 console.log(projectListPublic);
 
 
