@@ -4,12 +4,16 @@ Thanks this, you can faster do something without spending time for writing
 Be faster thanks clicking!
 
 ### Devops-Gui
-the first version of apicra, just for testing
+the first version of apicra tool, just for testing
 This project is using apicra-devops scripts
 https://github.com/apicra/devops
 
 ### DevOpsTerminal
-In the future, will be used another solution with apicra-devops:
+This tool will be used instead of apicra tool, with:
++ extended functionality for shell, bash scripting
++ more options for project management
++ the same platform, nodejs
++ better UI, optimisied for automatisation
 
 ### WebBrowser client for terminal console 
 https://github.com/DevOpsTerminal/frontend
