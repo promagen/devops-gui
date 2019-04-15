@@ -4,8 +4,9 @@ Thanks this, you can faster do something without spending time for writing
 Be faster thanks clicking!
 
 ### Devops-Gui
-the first version of apicra tool, just for testing
-This project is using apicra-devops scripts
+the first version of apicra tool, just for testing web interface and terminal console
+This project is using apicra-devops scripts to execute in console on many platform: Windows, Linux, iOS
+
 https://github.com/apicra/devops
 
 ### DevOpsTerminal
