@@ -10,7 +10,7 @@ $(document).ready(function () {
         ie8SafePreventEvent(e);
         var url = $(this).attr('href');
         var path = $(this).text();
-        var name = path.replace(/^.*[\\\/]/, '');
+        //var name = path.replace(/^.*[\\\/]/, '');
 
         // console.log(name);
         // $('.scripts').load(url);
@@ -21,7 +21,7 @@ $(document).ready(function () {
         $.getJSON(url, function (data) {
 
             var domain = '';
-            var items = [];
+            //var items = [];
             var item = "";
             var group = {all: []};
             var group_name = "";
@@ -133,7 +133,7 @@ $(document).ready(function () {
                     });
 
 
-                    if (name == 'build.bat') {
+                    if (name === 'build.bat' || name === 'build.sh') {
                         setTimeout(function () {
                             var win = window.open(open_page, '_blank');
                             if (win) {

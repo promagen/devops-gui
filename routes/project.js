@@ -1,32 +1,56 @@
 var express = require('express');
 var router = express.Router();
+
+const PublicConfig = require('../config');
+var localConfig = new PublicConfig();
+var path = require("path");
+
+console.log('localConfig.os');
+console.log(localConfig.os);
+
+var getFileList = require('../get_bat_file_list');
+if(localConfig.os === 'Linux'){
+    getFileList = require('../get_sh_file_list');
+}
+
 var projectList = require('../project_list');
-var getFileList = require('../get_file_list');
 
-console.log('project');
+console.log('projectList');
+console.log(projectList);
 
 
-/* GET home page. */
+
+/* get list of projects from folder ini */
 router.get('/:project_type/:project_id', function (req, res, next) {
+
+    console.log('------------------------------');
+    console.log('GET /:project_type/:project_id');
 
     // console.log(projectList['0']);
     var projectId = req.params.project_id;
     var projectType = req.params.project_type;
+
+
     console.log('projectType');
     console.log(projectType);
 
     console.log('projectId');
     console.log(projectId);
 
-    console.log(projectList[projectType]);
 
-    var partition = 'e:';
-    var project_path = partition + projectList[projectType][projectId]['path'];
+    var projectVolume = projectList[projectType][projectId]['volume'];
+    console.log('projectVolume');
+    console.log(projectVolume);
 
+
+    var project_path = projectVolume + projectList[projectType][projectId]['path'];
     console.log('project_path');
     console.log(project_path);
 
-    console.log('getFileList');
+    console.log('projectList[projectType]');
+    console.log(projectList[projectType]);
+
+    console.log('getBatFileList');
     getFileList(project_path, function (FileList) {
         // console.log(FileList);
         var fList = [];
@@ -35,12 +59,11 @@ router.get('/:project_type/:project_id', function (req, res, next) {
         FileList.forEach(function (filename, fileId) {
 
             console.log(filename, fileId);
-            var path = require("path");
 
             // TODO: flist to the cache
             fList.push({
                 'path': filename,
-                'path_dir': path.dirname(filename) + '\\',
+                'path_dir': path.normalize(path.dirname(filename) + '/'),
                 'name': filename.replace(/^.*[\\\/]/, ''),
                 'url': 'bat/p/' + projectType + '/' + projectId + '/' + fileId,
                 'domain': projectList[projectType][projectId]['domain']

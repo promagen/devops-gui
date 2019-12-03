@@ -1,4 +1,5 @@
 ## TODO
+ + create settings local file, and by user
  + Split gui to differents technologies/languages/scripts:
  + create an API for these things from the backend:
     + filesystem scanning for projects
