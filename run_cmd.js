@@ -53,6 +53,7 @@ function RunCmd(filename, res) {
     try {
 
         var version = exec('node --version', {silent: true}).stdout;
+        console.log(version);
 
         // var child = exec(command, {async:true});
         // child.stdout.on('data', function(data) {
@@ -64,9 +65,15 @@ function RunCmd(filename, res) {
             console.log('Program output:', stdout);
             console.log('Program stderr:', stderr);
 
+            code = '<span style="color: gray">' + code + '</span>' + '<br/>';
+
             stdout = stdout.replace(/\r\n|\r|\n/, '<br/>');
+            stdout = '<span style="color: darkblue">' + stdout + '</span>' + '<br/>';
+
             stderr = stderr.replace(/\r\n|\r|\n/, '<br/>');
-            res.send('<br/>' + stdout + '<br/>' + '<br/>' + stderr + '<br/>');
+            stderr = '<span style="color: darkred">' + stderr + '</span>' + '<br/>';
+
+            res.send('<br/>' + code + stdout + stderr + '<br/>');
         });
 
         // // stdout = exec( command, configs ).stdout;

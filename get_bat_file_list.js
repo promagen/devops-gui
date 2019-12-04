@@ -16,4 +16,8 @@ var getBatFileList = function (path, callback) {
     // return FileList;
 };
 
+// find('src', 'lib');
+// find(['src', 'lib']); // same as above
+// find('.').filter(function(file) { return file.match(/\.js$/); });
+
 module.exports = getBatFileList;
