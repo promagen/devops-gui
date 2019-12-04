@@ -3,7 +3,7 @@
 //var projectListPublic = [];
 var projectListPrivate = [];
 
-//const fs = require('fs');
+const fs = require('fs');
 const ini = require('ini');
 
 // LIB
@@ -39,6 +39,7 @@ getIniFileList(localConfig.project_path, function (FileList) {
     });
 });
 
+console.log('projectListPrivate');
 console.log(projectListPrivate);
 var projectList = {
     'private': projectListPrivate,

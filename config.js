@@ -1,9 +1,15 @@
 const osHomedir = require('os-homedir');
+const os = require('os');
+const os_name = os.type();
 
-let project_path = '~/devops-gui-projects';
+var project_path = '~/devops-gui-projects';
 // console.log(osHomedir());
 project_path = project_path.replace(/^~/, osHomedir());
 // console.log(project_path);
+
+if(os_name === 'Linux'){
+    project_path = '/home/tomaszsapletta/devops-gui-projects';
+}
 
 
 // Create menu from devops - apicra projects
@@ -28,14 +34,13 @@ fs.readdirSync(devops_path).forEach(file => {
  */
 console.log(projectListPublic);
 
-const os = require('os');
-
-
 module.exports = function () {
     return {
 
+        username: 'tomaszsapletta',
         // base path that will be used to resolve all patterns (eg. files, exclude)
         project_path: project_path,
+
         projectListPublic: projectListPublic,
 
 
@@ -48,7 +53,7 @@ module.exports = function () {
         singleRun: false,
 
         // SYSTEM OS
-        os: os.type(),
+        os: os_name,
 
     }
 }
