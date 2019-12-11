@@ -14,7 +14,10 @@ Now for each project can be easly access to seolve problems & maintanance projec
 
 ## Benefits
 Thanks this, you can faster do something without spending time for writing
-Be faster thanks clicking!
+Special solution for mobile devices!
+
+Be faster!
+... more touching, less writing
 
 ### Devops-Gui
 the first version of apicra tool, just for testing web interface and terminal console
