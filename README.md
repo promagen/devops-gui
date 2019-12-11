@@ -9,8 +9,8 @@ Now for each project can be easly access to seolve problems & maintanance projec
 
 + Webapplication is based on Nodejs
 + Terminal scripts are starting over shelljs library
-+ Scripts are created by apicra project, which is supporting any os
-https://github.com/apicra
++ Scripts are created by [apicra](https://github.com/apicra) project, which is supporting any os
+
 
 ## Benefits
 Thanks this, you can faster do something without spending time for writing
