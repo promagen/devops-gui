@@ -17,6 +17,11 @@ block content
   nav(class="navbar navbar-toggleable-md navbar-light bg-faded")
     div(class="collapse navbar-collapse", id="navig_private")
       ul(class="projects navbar-nav mr-auto")
+        li(class="link nav-item logo")
+          a(class="nav-link button", href="https://promagen.com")
+            img(src="/images/promagen32.png", title="PROMAGEN - PROject MAnager & GENerator")
+        li(class="link nav-item logo-text")
+          a(class="nav-link button", href="https://promagen.com")="PROMAGEN"
         each p in projects_private
           li(class="link nav-item")
             a(class="nav-link button", href=p.url)= p.title

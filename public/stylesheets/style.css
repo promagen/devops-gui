@@ -1,5 +1,5 @@
 body {
-    padding: 5px;
+    padding: 1px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: #dddddd;
 }
@@ -37,7 +37,7 @@ h1 {
     padding: 0;
     width: 200px;
     color: white;
-    background: #cccccc;
+    /*background: #cccccc;*/
 }
 
 body > .container {
@@ -98,12 +98,71 @@ h2 {
 }
 
 div#navig_public,
-div#navig_public ul li
-{
+div#navig_public ul li {
     display: none;
     height: 0;
 }
-nav.first_menu{
+
+nav.first_menu {
     display: none;
     height: 0;
+}
+
+.navbar {
+    background-color: #0b173d;
+    padding: 0 0;
+}
+
+/* LOGO*/
+.navbar-light .navbar-nav .logo .nav-link{
+    padding: 1px;
+    margin: 1px;
+}
+
+.navbar-light .navbar-nav .logo {
+    /*width: 200px;*/
+}
+.navbar-light .navbar-nav .logo img{
+    /*margin-left: 0px;*/
+    /*padding-left: 0px;*/
+    /*padding-right: 10px;*/
+    /*padding-top: 0px;*/
+    /*margin-top: -2px;*/
+    height: 32px;
+    /*width: 40px;*/
+    display: inline-block;
+    /*width: 200px;*/
+}
+.navbar-light .navbar-nav .logo-text .nav-link:link,
+.navbar-light .navbar-nav .logo-text .nav-link:visited,
+.navbar-light .navbar-nav .logo-text .nav-link {
+    color: rgb(208, 160, 3);
+    padding-right: 20px;
+    /*padding-top: 0px;*/
+    /*width: 140px;*/
+    display: inline-block;
+}
+
+
+/* MENU */
+.navbar-light .navbar-nav .nav-link {
+    padding-top: 7px;
+}
+/*.navbar-light .navbar-nav ,*/
+.navbar-light .navbar-nav .nav-link:link {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    /*margin-top: -3px;*/
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: yellow;
+}
+
+.navbar-light .navbar-nav .nav-link:active {
+    /*color: white;*/
+}
+
+.navbar-light .navbar-nav .nav-link:visited {
+    color: orange;
 }
