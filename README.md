@@ -1,7 +1,23 @@
-## What is devops-gui
-Web service for using console in browser
+# Promagen
+PROject MAnager & GENerator
+
+## How it work's?
+Web service on browser is using console for executing bash scripts on server/pc/iot device
+
+Start and maintaince is so simple, without using terminal and many lines of scripts code
+Now for each project can be easly access to seolve problems & maintanance project without experts.
+
++ Webapplication is based on [Nodejs](https://nodejs.org/en/)
++ Terminal scripts are starting over [shelljs](https://github.com/shelljs/shelljs) library
++ Scripts are created by [apicra](https://github.com/apicra) project, which is supporting any os
+
+
+## Benefits
 Thanks this, you can faster do something without spending time for writing
-Be faster thanks clicking!
+Special solution for mobile devices!
+
+Be faster!
+... more touching, less writing
 
 ### Devops-Gui
 the first version of apicra tool, just for testing web interface and terminal console
